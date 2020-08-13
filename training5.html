@@ -22,17 +22,14 @@
         let y = parseInt(document.getElementById("sob").value);
         let z = parseInt(document.getElementById("soc").value);
         let g = y*y - 4*x*z ;
-        let x2  =  (-y  - Math.sqrt(g))/2*x;
-        let x1  =   (-y + Math.sqrt(g))/2*x;
-        let kep = -y/2*x;
         if (x===0 )  {
             document.getElementById("giatri").innerHTML= 'Phương trình có 1 nghiệm' + -y/z;
         } else if (x===0  && y===0) {
             document.getElementById("giatri").innerHTML='phương trình vô số nghiệm';
         }  else if (g>0) {
-            document.getElementById("giatri").innerHTML='phương trinh có 2 nghiệm  :' + x1 +'    '  +x2;
+            document.getElementById("giatri").innerHTML='phương trinh có 2 nghiệm  :' + (-y  - Math.sqrt(g))/2*x +' ' + (-y + Math.sqrt(g))/2*x;
         }  else if (g===0) {
-            document.getElementById("giatri").innerHTML='phương trình có nghiệm kép x1,x2  :' +kep;
+            document.getElementById("giatri").innerHTML='phương trình có nghiệm kép x1,x2  :' + -y/2*x;
         } else if (g<0) {
             document.getElementById("giatri").innerHTML='phương trình vô nghiệm';
         }
